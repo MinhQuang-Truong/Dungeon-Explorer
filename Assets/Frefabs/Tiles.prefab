@@ -143,8 +143,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4851be0756ac2fd4c8ede4bedc1b5f63, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  highlightedColor: {r: 0.21960786, g: 0.21960786, b: 0.21960786, a: 1}
-  creatableColor: {r: 0, g: 0, b: 0, a: 0}
+  highlightedColor: {r: 0.5471698, g: 0.3742435, b: 0.3742435, a: 0.627451}
+  creatableColor: {r: 0.33962262, g: 0.33962262, b: 0.33962262, a: 0}
   obstacles:
     serializedVersion: 2
     m_Bits: 256

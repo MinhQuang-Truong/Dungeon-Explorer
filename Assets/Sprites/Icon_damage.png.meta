@@ -1,0 +1,271 @@
+fileFormatVersion: 2
+guid: 6c0e0cfefab837548b7c3725d8672075
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -6168024391973773413
+    second: Icon_damage_0
+  - first:
+      213: -424536338915993956
+    second: Icon_damage_1
+  - first:
+      213: -1676407269287606061
+    second: Icon_damage_2
+  - first:
+      213: -1541334418461871251
+    second: Icon_damage_3
+  - first:
+      213: 6838055749451434401
+    second: Icon_damage_4
+  - first:
+      213: 6999537536236212943
+    second: Icon_damage_5
+  - first:
+      213: -2187385244899137921
+    second: Icon_damage_6
+  externalObjects: {}
+  serializedVersion: 10
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: -1
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Icon_damage_0
+      rect:
+        serializedVersion: 2
+        x: 187
+        y: 357
+        width: 200
+        height: 218
+      alignment: 9
+      pivot: {x: 0.48444396, y: 0.01953741}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2c8a87f589389e14699549e38bd293d4
+      internalID: -6168024391973773413
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Icon_damage_1
+      rect:
+        serializedVersion: 2
+        x: 499
+        y: 375
+        width: 200
+        height: 218
+      alignment: 9
+      pivot: {x: 0.4896292, y: 0.0005094196}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 340d515151a78794d8d348c95a0b0760
+      internalID: -424536338915993956
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Icon_damage_2
+      rect:
+        serializedVersion: 2
+        x: 812
+        y: 359
+        width: 200
+        height: 218
+      alignment: 9
+      pivot: {x: 0.5311102, y: 0.08137918}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 74a7ecaa8df95d04cab4ffd5670940d2
+      internalID: -1676407269287606061
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Icon_damage_3
+      rect:
+        serializedVersion: 2
+        x: 175
+        y: 97
+        width: 200
+        height: 218
+      alignment: 9
+      pivot: {x: 0.40148124, y: 0.07186529}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b6a2811f2e5f08348a999a3f71eaf04d
+      internalID: -1541334418461871251
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Icon_damage_4
+      rect:
+        serializedVersion: 2
+        x: 503
+        y: 95
+        width: 200
+        height: 218
+      alignment: 9
+      pivot: {x: 0.4533325, y: 0.1384642}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 08d912fc3d6b26e41824779d5f2855cf
+      internalID: 6838055749451434401
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Icon_damage_5
+      rect:
+        serializedVersion: 2
+        x: 818
+        y: 85
+        width: 200
+        height: 218
+      alignment: 9
+      pivot: {x: 0.54666626, y: 0.0100238}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0e718976544a3f5489fbc1b4be850f5a
+      internalID: 6999537536236212943
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Icon_damage_6
+      rect:
+        serializedVersion: 2
+        x: 1079
+        y: 156
+        width: 9
+        height: 15
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d91e36339d01dfa4cb511297dd9a3155
+      internalID: -2187385244899137921
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
