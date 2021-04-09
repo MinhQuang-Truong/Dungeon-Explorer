@@ -63,7 +63,18 @@ public class TileSetting : MonoBehaviour
     {
         if (isWalkable == true && gm.selectedUnit != null)
         {
-            gm.selectedUnit.Move(this.transform.position);
+            gm.selectedUnit.Move(this.transform);
+        }
+        else if (isCreatable)
+        {
+            BarrackItem item = Instantiate(gm.purchasedItem, new Vector2(Mathf.Round(transform.position.x), Mathf.Round(transform.position.y)), Quaternion.identity);
+            gm.ResetTiles();
+            Units unit = item.GetComponent<Units>();
+            if (unit != null)
+            {
+                unit.hasMoved = true;
+                unit.hasAttack = true;
+            }
         }
     }
 

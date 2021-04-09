@@ -3,7 +3,9 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Range
+  - Melee
   layers:
   - Default
   - TransparentFX
@@ -14,7 +16,7 @@ TagManager:
   - 
   - 
   - Obstacle
-  - 
+  - Cursor
   - 
   - 
   - 
@@ -43,4 +45,7 @@ TagManager:
     locked: 0
   - name: Object
     uniqueID: 62526275
+    locked: 0
+  - name: Sky
+    uniqueID: 223562957
     locked: 0

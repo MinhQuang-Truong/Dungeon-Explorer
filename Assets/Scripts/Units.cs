@@ -2,7 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.UI;
 public class Units : MonoBehaviour
 {
     public bool selected;
@@ -25,18 +25,34 @@ public class Units : MonoBehaviour
     public int defenseDamage;
     public int armor;
 
+    private Animator camAnim;
+    public GameObject deathEffect;
+    public DamageIcon damageIcon;
 
+    public Text generalHealth;
+    public bool isGeneral;
+
+
+    public GameObject victoryPanel;
     // Start is called before the first frame update
     void Start()
     {
         ResetAttackIcon();
         gm = FindObjectOfType<GameMaster>();
+        camAnim = Camera.main.GetComponent<Animator>();
+        UpdateGeneralHealth();
     }
-
+   
+    public void UpdateGeneralHealth()
+    {
+        if (isGeneral)
+        {
+            generalHealth.text = health.ToString();
+        }
+    }
     private void OnMouseDown()
     {
         ResetAttackIcon();
-
         if(selected == true)
         {
             selected = false;
@@ -72,6 +88,7 @@ public class Units : MonoBehaviour
 
     void Attack(Units enemy)
     {
+        camAnim.SetTrigger("shake");
         hasAttack = true;
 
         int enemyDamage = attackDamage - enemy.armor;
@@ -80,27 +97,61 @@ public class Units : MonoBehaviour
         if (enemyDamage >= 1)
         {
             enemy.health -= enemyDamage;
-            Debug.Log("Player: "+enemy.playerNumber+" health: " + enemy.health);
+            DamageIcon d = Instantiate(damageIcon, enemy.transform.position, Quaternion.identity);
+            d.Setup(enemyDamage);
+            enemy.UpdateGeneralHealth();
         }
 
-        if(myDamage >= 1)
+        if (transform.tag == "Range" && enemy.tag != "Range")
         {
-            health -= myDamage;
-            Debug.Log("Player: " + playerNumber + " health: " + health);
+            if (Math.Round(Mathf.Abs(transform.position.x - enemy.transform.position.x))+Math.Round( Mathf.Abs(transform.position.y - enemy.transform.position.y) )<= 1) // check is the enemy is near enough to attack
+            {
+                if (myDamage >= 1)
+                {
+                    health -= myDamage;
+                    DamageIcon d = Instantiate(damageIcon, transform.position, Quaternion.identity);
+                    d.Setup(myDamage);
+                    UpdateGeneralHealth();
+                }
+            }
+        }
+        else
+        {
+            if (myDamage >= 1)
+            {
+                health -= myDamage;
+                DamageIcon d = Instantiate(damageIcon, transform.position, Quaternion.identity);
+                d.Setup(myDamage);
+                UpdateGeneralHealth();
 
+            }
         }
 
         if (enemy.health <= 0)
         {
+            if (enemy.isGeneral)
+            {
+                enemy.victoryPanel.SetActive(true);
+            }
+            Instantiate(deathEffect, enemy.transform.position, Quaternion.identity);
+            gm.removeStatsPanel(enemy);
             Destroy(enemy.gameObject);
             GetWalkableTiles();
         }
 
         if(health <= 0)
         {
+            if (isGeneral)
+            {
+                victoryPanel.SetActive(true);
+            }
+            Instantiate(deathEffect, transform.position, Quaternion.identity);
+            gm.removeStatsPanel(this);
             gm.ResetTiles();
+            GetWalkableTiles();
             Destroy(this.gameObject);
         }
+        gm.UpdateStatsPanel();
     }
     void GetWalkableTiles()
     {
@@ -123,7 +174,13 @@ public class Units : MonoBehaviour
             }
         }
     }
-
+    private void OnMouseOver()
+    {
+        if (Input.GetMouseButtonDown(1))
+        {
+            gm.ToggleStatsPanel(this);
+        }
+    }
     void GetEnemies()
     {
         enemiesInRange.Clear();
@@ -151,30 +208,32 @@ public class Units : MonoBehaviour
             unit.attackIcon.SetActive(false);
         }
     }
-    public void Move(Vector2 movePos)
+    public void Move(Transform movePos)
     {
         gm.ResetTiles();
         StartCoroutine(StartMovement(movePos));
+     
     }
-    IEnumerator StartMovement(Vector2 movePos)
+    IEnumerator StartMovement(Transform movePos)
     { // Moves the character to his new position.
 
+        Debug.Log(movePos.position.x + "   " + movePos.position.y);
 
-        while (transform.position.x != movePos.x)
+        while (transform.position.x != Mathf.Round(movePos.position.x))
         { // first aligns him with the new tile's x pos
-            transform.position = Vector2.MoveTowards(transform.position, new Vector2(movePos.x, transform.position.y), moveSpeed * Time.deltaTime);
+            transform.position = Vector2.MoveTowards(transform.position, new Vector2(Mathf.Round(movePos.position.x), transform.position.y), moveSpeed * Time.deltaTime);
             yield return null;
         }
-        while (transform.position.y != movePos.y) // then y
+        while (transform.position.y != Mathf.Round(movePos.position.y)) // then y
         {
-            transform.position = Vector2.MoveTowards(transform.position, new Vector2(transform.position.x, movePos.y), moveSpeed * Time.deltaTime);
+            transform.position = Vector2.MoveTowards(transform.position, new Vector2(transform.position.x, Mathf.Round(movePos.position.y)), moveSpeed * Time.deltaTime);
             yield return null;
         }
 
         hasMoved = true;
         ResetAttackIcon();
         GetEnemies();
-
+        gm.moveStatsPanel(this);
     }
 
 
